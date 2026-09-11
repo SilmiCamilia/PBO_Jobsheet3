@@ -26,7 +26,11 @@ public class motor {
     }
 
     public void setKecepatan(int kecepatan) {
-        this.kecepatan = kecepatan;
+        if (isMesinOn) {
+            this.kecepatan = kecepatan;
+        } else {
+            System.out.println("Kecepatan tidak bisa bertambah karena Mesin Off!");
+        }
     }
 
     public int getKecepatan() {
